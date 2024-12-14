@@ -82,38 +82,7 @@ This guide will walk you through setting up and using the Discord Snarky Bot, po
 
 2. **Setup GitHub Actions Workflow:**
 
-    The repository already includes a GitHub Actions workflow file `.github/workflows/bot.yml`:
-
-    ```yaml
-    name: Discord Bot 24/7
-
-    on:
-      schedule:
-        - cron: '*/5 * * * *'
-      workflow_dispatch:
-
-    jobs:
-      keep_alive:
-        runs-on: ubuntu-latest
-        steps:
-        - uses: actions/checkout@v2
-        
-        - name: Setup Python
-          uses: actions/setup-python@v2
-          with:
-            python-version: '3.11'
-        
-        - name: Install dependencies
-          run: |
-            pip install -r requirements.txt
-        
-        - name: Run Bot
-          env:
-            DISCORD_TOKEN: ${{ secrets.DISCORD_TOKEN }}
-            TARGET_USER_ID: ${{ secrets.TARGET_USER_ID }}
-            GH_PAT_TOKEN: ${{ secrets.GH_PAT_TOKEN }}
-          run: python main.py
-    ```
+    The repository already includes a GitHub Actions workflow file [here](https://github.com/slashedzer0/discord-snarky-bot-llama/blob/main/.github/workflows/bot.yml).
 
 ### Development Container
 

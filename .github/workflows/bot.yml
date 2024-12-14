@@ -5,9 +5,16 @@ on:
     - cron: '*/5 * * * *'
   workflow_dispatch:
 
+# Ensure only one workflow runs at a time
+concurrency:
+  group: discord-bot
+  cancel-in-progress: true
+
 jobs:
   keep_alive:
     runs-on: ubuntu-latest
+    timeout-minutes: 4  # Stop after 4 minutes to ensure clean shutdown before next run
+
     steps:
     - uses: actions/checkout@v2
     
@@ -16,13 +23,21 @@ jobs:
       with:
         python-version: '3.11'
     
-    - name: Install dependencies
+    - name: Install Dependencies
       run: |
+        python -m pip install --upgrade pip
         pip install -r requirements.txt
-    
+
     - name: Run Bot
       env:
         DISCORD_TOKEN: ${{ secrets.DISCORD_TOKEN }}
         TARGET_USER_ID: ${{ secrets.TARGET_USER_ID }}
         GH_PAT_TOKEN: ${{ secrets.GH_PAT_TOKEN }}
-      run: python main.py
+      run: |
+        python main.py
+
+    - name: Cleanup
+      if: always()
+      run: |
+        # Add any cleanup tasks here
+        echo "Cleaning up resources..."
