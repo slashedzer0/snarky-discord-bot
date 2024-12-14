@@ -2,7 +2,7 @@ name: Discord Bot 24/7
 
 on:
   schedule:
-    - cron: '0/6 * * * *'  # Run every 6 minutes (5 min run + 1 min break)
+    - cron: '0/5 * * * *'
   workflow_dispatch:
 
 concurrency:
@@ -12,7 +12,6 @@ concurrency:
 jobs:
   keep_alive:
     runs-on: ubuntu-latest
-    timeout-minutes: 5  # Force stop after 5 minutes
 
     steps:
     - uses: actions/checkout@v2
