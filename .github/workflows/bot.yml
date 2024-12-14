@@ -2,10 +2,9 @@ name: Discord Bot 24/7
 
 on:
   schedule:
-    - cron: '* * * * *'
+    - cron: '* * * * *'  # Run every minute
   workflow_dispatch:
 
-# Ensure only one workflow runs at a time
 concurrency:
   group: discord-bot
   cancel-in-progress: true
@@ -13,7 +12,7 @@ concurrency:
 jobs:
   keep_alive:
     runs-on: ubuntu-latest
-    timeout-minutes: 5  # Stop after 4 minutes to ensure clean shutdown before next run
+    timeout-minutes: 0.75  # 45 seconds timeout
 
     steps:
     - uses: actions/checkout@v2
@@ -34,10 +33,9 @@ jobs:
         TARGET_USER_ID: ${{ secrets.TARGET_USER_ID }}
         GH_PAT_TOKEN: ${{ secrets.GH_PAT_TOKEN }}
       run: |
-        timeout 5m python main.py
+        timeout 45s python main.py  # Force stop after 45 seconds
 
     - name: Cleanup
       if: always()
       run: |
-        # Add any cleanup tasks here
         echo "Cleaning up resources..."
