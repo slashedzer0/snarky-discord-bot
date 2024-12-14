@@ -1,22 +1,22 @@
-# discord-snarky-bot-llama
+# 🤖 snarky-discord-bot
 
-## Setup and Usage
+## 🚀 Setup and Usage
 
-This guide will walk you through setting up and using the Discord Snarky Bot, powered by Llama-3.1-8B-Instruct. You can run this bot either locally or using GitHub Actions.
+This guide will walk you through setting up and using the Snarky Discord Bot, powered by Llama-3.1-8B-Instruct. You can run this bot either locally or using GitHub Actions.
 
-### Prerequisites
+### 📋 Prerequisites
 
 - Python 3.11 or later
 - A Discord bot token
 - GitHub Personal Access Token (PAT)
 - Azure AI Inference credentials
 
-### Local Setup
+### 💻 Local Setup
 
 1. **Clone the repository:**
 
     ```sh
-    git clone https://github.com/slashedzer0/discord-snarky-bot-llama.git
+    git clone https://github.com/slashedzer0/snarky-discord-bot.git
     cd discord-snarky-bot-llama
     ```
 
@@ -49,7 +49,7 @@ This guide will walk you through setting up and using the Discord Snarky Bot, po
     python main.py
     ```
 
-### Obtaining Required Secrets
+### 🔑 Obtaining Required Secrets
 
 1. **DISCORD_TOKEN:**
 
@@ -70,7 +70,7 @@ This guide will walk you through setting up and using the Discord Snarky Bot, po
    - Click on "Generate new token" and check none.
    - Copy the generated token. This is your `GH_PAT_TOKEN`.
 
-### GitHub Actions Setup
+### ⚙️ GitHub Actions Setup
 
 1. **Configure Secrets:**
 
@@ -82,13 +82,13 @@ This guide will walk you through setting up and using the Discord Snarky Bot, po
 
 2. **Setup GitHub Actions Workflow:**
 
-    The repository already includes a GitHub Actions workflow file [here](https://github.com/slashedzer0/discord-snarky-bot-llama/blob/main/.github/workflows/bot.yml).
+    The repository already includes a GitHub Actions workflow file [here](https://github.com/slashedzer0/snarky-discord-bot/blob/main/.github/workflows/bot.yml). You can adjust it to your liking.
 
-### Development Container
+### 🐳 Development Container
 
 The repository includes a development container configuration in `.devcontainer/devcontainer.json` for VS Code. This allows you to work in a consistent environment.
 
-### Additional Configuration
+### ⚡ Additional Configuration
 
 The `.vscode/launch.json` file is configured to help you run and debug the bot using VS Code. Make sure to update the `envFile` path if necessary.
 
@@ -106,3 +106,4 @@ The `.vscode/launch.json` file is configured to help you run and debug the bot u
         }
     ]
 }
+```
