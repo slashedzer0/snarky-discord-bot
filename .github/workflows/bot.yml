@@ -24,5 +24,5 @@ jobs:
       env:
         DISCORD_TOKEN: ${{ secrets.DISCORD_TOKEN }}
         TARGET_USER_ID: ${{ secrets.TARGET_USER_ID }}
-        GITHUB_PAT_TOKEN: ${{ secrets.GITHUB_PAT_TOKEN }}
+        GH_PAT_TOKEN: ${{ secrets.GH_PAT_TOKEN }}
       run: python main.py

@@ -11,11 +11,11 @@ load_dotenv()
 
 DISCORD_TOKEN = os.getenv("DISCORD_TOKEN")
 TARGET_USER_ID = os.getenv("TARGET_USER_ID")
-GITHUB_PAT_TOKEN = os.getenv("GITHUB_PAT_TOKEN")
+GH_PAT_TOKEN = os.getenv("GH_PAT_TOKEN")
 
 endpoint = "https://models.inference.ai.azure.com"
 model_name = "Meta-Llama-3.1-8B-Instruct"
-token = GITHUB_PAT_TOKEN
+token = GH_PAT_TOKEN
 
 intents = discord.Intents.default()
 intents.messages = True
