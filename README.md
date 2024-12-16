@@ -17,7 +17,7 @@ This guide will walk you through setting up and using the Snarky Discord Bot, po
 
     ```sh
     git clone https://github.com/slashedzer0/snarky-discord-bot.git
-    cd discord-snarky-bot-llama
+    cd snarky-discord-bot
     ```
 
 2. **Create and activate a virtual environment:**
