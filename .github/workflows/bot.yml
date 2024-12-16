@@ -1,8 +1,8 @@
-name: Discord Bot 24/7
+name: snarky-discord-bot 24/7
 
 on:
   schedule:
-    - cron: '0/5 * * * *'
+    - cron: '0 */3 * * *'
   workflow_dispatch:
 
 concurrency:
@@ -32,7 +32,7 @@ jobs:
         TARGET_USER_ID: ${{ secrets.TARGET_USER_ID }}
         GH_PAT_TOKEN: ${{ secrets.GH_PAT_TOKEN }}
       run: |
-        python main.py
+        nohup python main.py &
         
     - name: Cleanup
       if: always()
