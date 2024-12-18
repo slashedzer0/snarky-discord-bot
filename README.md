@@ -72,12 +72,17 @@ This guide will walk you through setting up and using the Snarky Discord Bot, po
 
 ### 🌐 GitHub Codespaces Setup
 
-1. **Create a Codespace:**
+1. **Fork the repository:**
 
-    - Navigate to this repository homepage.
+    - Navigate to the [repository homepage](https://github.com/slashedzer0/snarky-discord-bot).
+    - Click the "Fork" button in the top right corner to create your own copy of the repository.
+
+2. **Create a Codespace:**
+
+    - Navigate to your forked repository homepage.
     - Click the "Code" button and select "Create codespace on main".
 
-2. **Configure Environment Variables:**
+3. **Configure Environment Variables:**
 
     - In the Codespace, create a `.env` file in the root directory.
     - Add your environment variables to the `.env` file:
@@ -88,7 +93,7 @@ This guide will walk you through setting up and using the Snarky Discord Bot, po
       GH_ACCESS_TOKEN=your_github_access_token
       ```
 
-3. **Run the Bot:**
+4. **Run the Bot:**
 
     - Open a terminal in the Codespace.
     - Run the bot:
@@ -99,15 +104,20 @@ This guide will walk you through setting up and using the Snarky Discord Bot, po
 
 ### ⚙️ GitHub Actions Setup
 
-1. **Configure Secrets:**
+1. **Fork the repository:**
 
-    Go to your repository settings on GitHub and add the following secrets:
+    - Navigate to the [repository homepage](https://github.com/slashedzer0/snarky-discord-bot).
+    - Click the "Fork" button in the top right corner to create your own copy of the repository.
+
+2. **Configure Secrets:**
+
+    Go to your forked repository settings on GitHub and add the following secrets:
 
     - `DISCORD_TOKEN`
     - `TARGET_USER_ID`
     - `GH_ACCESS_TOKEN`
 
-2. **Setup GitHub Actions Workflow:**
+3. **Setup GitHub Actions Workflow:**
 
     The repository includes a GitHub Actions workflow file [here](https://github.com/slashedzer0/snarky-discord-bot/blob/main/.github/workflows/bot.yml). You can adjust it to your liking.
 
