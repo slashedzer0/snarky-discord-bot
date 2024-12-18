@@ -26,11 +26,11 @@ This guide will walk you through setting up and using the Snarky Discord Bot, po
    - Under "Advanced", enable "Developer Mode".
    - Right-click on the target user and select "Copy ID". This is your `TARGET_USER_ID`.
 
-3. **GH_PAT_TOKEN:**
+3. **GH_ACCESS_TOKEN:**
 
    - Go to [GitHub Settings](https://github.com/settings/tokens).
    - Click on "Generate new token (classic)" and check none.
-   - Copy the generated token. This is your `GH_PAT_TOKEN`.
+   - Copy the generated token. This is your `GH_ACCESS_TOKEN`.
 
 ### 💻 Local Setup
 
@@ -60,8 +60,8 @@ This guide will walk you through setting up and using the Snarky Discord Bot, po
 
     ```sh
     export DISCORD_TOKEN="your_discord_bot_token"
-    export TARGET_USER_ID="target_user_id"
-    export GH_PAT_TOKEN="your_github_pat_token"
+    export TARGET_USER_ID="your_target_user_id"
+    export GH_ACCESS_TOKEN="your_github_token"
     ```
 
     Then run:
@@ -85,7 +85,7 @@ This guide will walk you through setting up and using the Snarky Discord Bot, po
       ```env
       DISCORD_TOKEN=your_discord_bot_token
       TARGET_USER_ID=target_user_id
-      GH_PAT_TOKEN=your_github_pat_token
+      GH_ACCESS_TOKEN=your_github_pat_token
       ```
 
 3. **Run the Bot:**
@@ -105,7 +105,7 @@ This guide will walk you through setting up and using the Snarky Discord Bot, po
 
     - `DISCORD_TOKEN`
     - `TARGET_USER_ID`
-    - `GH_PAT_TOKEN`
+    - `GH_ACCESS_TOKEN`
 
 2. **Setup GitHub Actions Workflow:**
 
