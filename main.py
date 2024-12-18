@@ -5,7 +5,6 @@ from azure.ai.inference import ChatCompletionsClient
 from azure.ai.inference.models import SystemMessage, UserMessage
 from azure.core.credentials import AzureKeyCredential
 from dotenv import load_dotenv
-from keep_alive import keep_alive
 
 load_dotenv()
 
@@ -63,5 +62,4 @@ async def on_message(message):
 
 
 if __name__ == "__main__":
-    keep_alive()
     bot.run(DISCORD_TOKEN)
