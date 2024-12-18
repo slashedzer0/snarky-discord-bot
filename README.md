@@ -61,7 +61,7 @@ This guide will walk you through setting up and using the Snarky Discord Bot, po
     ```sh
     export DISCORD_TOKEN="your_discord_bot_token"
     export TARGET_USER_ID="your_target_user_id"
-    export GH_ACCESS_TOKEN="your_github_token"
+    export GH_ACCESS_TOKEN="your_github_access_token"
     ```
 
     Then run:
@@ -84,8 +84,8 @@ This guide will walk you through setting up and using the Snarky Discord Bot, po
 
       ```env
       DISCORD_TOKEN=your_discord_bot_token
-      TARGET_USER_ID=target_user_id
-      GH_ACCESS_TOKEN=your_github_pat_token
+      TARGET_USER_ID=your_target_user_id
+      GH_ACCESS_TOKEN=your_github_access_token
       ```
 
 3. **Run the Bot:**
