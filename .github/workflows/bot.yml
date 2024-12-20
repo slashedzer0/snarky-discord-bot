@@ -1,40 +1,29 @@
-name: snarky-discord-bot 24/7
+name: snarky-discord-bot
 
 on:
-  schedule:
-    - cron: '0 */3 * * *'
   workflow_dispatch:
 
-concurrency:
-  group: discord-bot
-  cancel-in-progress: true
-
 jobs:
-  keep_alive:
+  run_bot:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
-    
-    - name: Setup Python
-      uses: actions/setup-python@v2
-      with:
-        python-version: '3.11'
-    
-    - name: Install Dependencies
-      run: |
-        python -m pip install --upgrade pip
-        pip install -r requirements.txt
-        
-    - name: Run Bot
-      env:
-        DISCORD_TOKEN: ${{ secrets.DISCORD_TOKEN }}
-        TARGET_USER_ID: ${{ secrets.TARGET_USER_ID }}
-        GH_ACCESS_TOKEN: ${{ secrets.GH_ACCESS_TOKEN }}
-      run: |
-        nohup python main.py &
-        
-    - name: Cleanup
-      if: always()
-      run: |
-        echo "Cleaning up and preparing for next run..."
+      - uses: actions/checkout@v2
+
+      - name: Setup Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Run bot
+        env:
+          DISCORD_TOKEN: ${{ secrets.DISCORD_TOKEN }}
+          TARGET_USER_ID: ${{ secrets.TARGET_USER_ID }}
+          GH_ACCESS_TOKEN: ${{ secrets.GH_ACCESS_TOKEN }}
+        run: |
+          python main.py
